@@ -1,7 +1,3 @@
-
--- NexaCorp Internal Knowledge Database Schema
-
--- FAQs table
 CREATE TABLE faqs (
     id SERIAL PRIMARY KEY,
     question TEXT NOT NULL,
@@ -10,7 +6,6 @@ CREATE TABLE faqs (
     visibility VARCHAR(20)
 );
 
--- Release notes table
 CREATE TABLE release_notes (
     id SERIAL PRIMARY KEY,
     version VARCHAR(20),
@@ -19,7 +14,6 @@ CREATE TABLE release_notes (
     release_date DATE
 );
 
--- Announcements (Email-style communications)
 CREATE TABLE announcements (
     id SERIAL PRIMARY KEY,
     subject TEXT NOT NULL,

@@ -1,7 +1,3 @@
-
--- Seed data for NexaCorp Internal Knowledge Database
-
--- FAQs
 INSERT INTO faqs (question, answer, department, visibility) VALUES
 ('How many paid leave days do employees get per year?', 'Employees are entitled to 24 days of paid leave per calendar year.', 'HR', 'INTERNAL'),
 ('How do I apply for extended medical leave?', 'Extended medical leave requires HR approval and submission of a medical certificate.', 'HR', 'INTERNAL'),
@@ -14,7 +10,6 @@ INSERT INTO faqs (question, answer, department, visibility) VALUES
 ('How often are access rights reviewed?', 'Access rights are reviewed periodically as part of regular audits.', 'Security', 'INTERNAL'),
 ('Who do I contact for onboarding issues?', 'Contact HR for policy questions and IT Support for system access issues.', 'HR', 'INTERNAL');
 
--- Release Notes
 INSERT INTO release_notes (version, summary, details, release_date) VALUES
 ('v2.1', 'Improved authentication performance', 'Optimized token validation and reduced login latency.', '2024-01-15'),
 ('v2.2', 'Enhanced role-based access control', 'Introduced finer-grained permissions for internal tools.', '2024-02-10'),
@@ -24,7 +19,6 @@ INSERT INTO release_notes (version, summary, details, release_date) VALUES
 ('v2.6', 'New deployment pipeline', 'Rolled out automated CI/CD pipelines for faster deployments.', '2024-05-02'),
 ('v2.7', 'Data privacy enhancements', 'Updated data handling mechanisms to align with privacy guidelines.', '2024-05-20');
 
--- Announcements (Email-style)
 INSERT INTO announcements (subject, body, category, effective_from, effective_to, source_type) VALUES
 ('Updated Work From Home Policy', 'The work from home policy has been updated. Employees are now required to work from the office at least two days per week.', 'HR', '2023-01-01', '2024-03-31', 'EMAIL'),
 ('Revised Work From Home Policy', 'Effective April 2024, employees may work remotely up to three days per week, subject to manager approval.', 'HR', '2024-04-01', NULL, 'EMAIL'),

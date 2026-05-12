@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 public class ChatService {
 
     private final ChatClient chatClient;
-
     private final PromptOrchestrator promptOrchestrator;
 
     public ChatResponse chat(ChatRequest request) {
