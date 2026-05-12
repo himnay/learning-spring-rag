@@ -12,9 +12,9 @@ public class DatabaseChunker {
     public List<Chunk> chunk(IngestedDocument document) {
         return List.of(
                 new Chunk(
-                        document.getSource(),
-                        document.getContent(),
-                        document.getMetadata(),
+                        document.source(),
+                        document.content(),
+                        document.metadata(),
                         0
                 ));
     }

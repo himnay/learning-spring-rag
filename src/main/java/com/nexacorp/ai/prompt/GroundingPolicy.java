@@ -6,7 +6,7 @@ public class GroundingPolicy {
 
     public String groundingRules(PromptContext context) {
 
-        if (context == null || context.getContextText().isBlank()) {
+        if (context == null || context.contextText().isBlank()) {
             return """
                    You do not have sufficient information to answer the question.
                    Respond clearly that you do not know.

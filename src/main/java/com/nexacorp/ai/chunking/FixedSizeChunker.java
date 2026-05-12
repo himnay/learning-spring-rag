@@ -19,18 +19,18 @@ public class FixedSizeChunker {
     public List<Chunk> chunk(IngestedDocument document, int chunkSize, int overlap) {
         List<Chunk> chunks = new ArrayList<>();
 
-        String content = document.getContent();
+        String content = document.content();
         int start = 0, chunkIndex = 0;
 
         while (start < content.length()) {
             int end = Math.min(start + chunkSize, content.length());
             String chunkText = content.substring(start, end);
 
-            Map<String, Object> chunkMetadata = new HashMap<>(document.getMetadata());
+            Map<String, Object> chunkMetadata = new HashMap<>(document.metadata());
             chunkMetadata.put("chunkIndex", chunkIndex);
 
             chunks.add(new Chunk(
-                    document.getSource(),
+                    document.source(),
                     chunkText,
                     chunkMetadata,
                     chunkIndex

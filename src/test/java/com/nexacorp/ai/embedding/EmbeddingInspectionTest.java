@@ -36,9 +36,9 @@ public class EmbeddingInspectionTest {
         for (Chunk chunk : chunks) {
             EmbeddedChunk embedded = chunkEmbeddingService.embed(chunk);
 
-            log.info("Metadata    : {}", chunk.getMetadata());
-            log.info("Content     : {}", chunk.getContent());
-            log.info("Embedding length : {}", embedded.getVector().length );
+            log.info("Metadata    : {}", chunk.metadata());
+            log.info("Content     : {}", chunk.content());
+            log.info("Embedding length : {}", embedded.vector().length );
         }
     }
 }

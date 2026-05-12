@@ -26,12 +26,12 @@ public class ChunkVectorStoreService {
     public void store(List<Chunk> chunks) {
 
         List<Document> documents = chunks.stream().map(chunk -> {
-            Map<String, Object> metadata = new HashMap<>(chunk.getMetadata());
-            metadata.put("source", chunk.getSource());
-            metadata.put("chunkIndex", chunk.getChunkIndex());
+            Map<String, Object> metadata = new HashMap<>(chunk.metadata());
+            metadata.put("source", chunk.source());
+            metadata.put("chunkIndex", chunk.chunkIndex());
 
             return new Document(
-                    chunk.getContent(),
+                    chunk.content(),
                     metadata
             );
         }).collect(Collectors.toList());

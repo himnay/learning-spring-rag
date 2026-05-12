@@ -15,7 +15,7 @@ public class WikiSemanticChunker {
     public List<Chunk> chunk(IngestedDocument document) {
         List<Chunk> chunks = new ArrayList<>();
 
-        String content = document.getContent();
+        String content = document.content();
 
         // Split by Markdown headings (##, ###, etc.)
         String[] sections = content.split("\n(?=#+\\s)");
@@ -28,12 +28,12 @@ public class WikiSemanticChunker {
                 continue;
             }
 
-            Map<String, Object> chunkMetadata = new HashMap<>(document.getMetadata());
+            Map<String, Object> chunkMetadata = new HashMap<>(document.metadata());
             chunkMetadata.put("chunkIndex", chunkIndex);
             chunkMetadata.put("chunkType", "WIKI_SECTION");
 
             chunks.add(new Chunk(
-                    document.getSource(),
+                    document.source(),
                     trimmed,
                     chunkMetadata,
                     chunkIndex

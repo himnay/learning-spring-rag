@@ -27,7 +27,7 @@ public class DatabaseChunkerTest {
         List<IngestedDocument> documents = ingestionOrchestrator.ingestAll();
 
         List<IngestedDocument> dbDocuments = documents.stream()
-                .filter(doc -> "DB".equals(doc.getSource()))
+                .filter(doc -> "DB".equals(doc.source()))
                 .toList();
 
         for (IngestedDocument dbDoc : dbDocuments) {
@@ -35,10 +35,10 @@ public class DatabaseChunkerTest {
             Chunk chunk = chunks.get(0);
 
             log.info("==== DB CHUNK ====");
-            log.info("Source      : {}", chunk.getSource());
-            log.info("Chunk Index : {}", chunk.getChunkIndex());
-            log.info("Metadata    : {}", chunk.getMetadata());
-            log.info("Content     : {}", chunk.getContent());
+            log.info("Source      : {}", chunk.source());
+            log.info("Chunk Index : {}", chunk.chunkIndex());
+            log.info("Metadata    : {}", chunk.metadata());
+            log.info("Content     : {}", chunk.content());
         }
 
     }

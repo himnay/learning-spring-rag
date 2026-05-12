@@ -17,18 +17,18 @@ public class ChatService {
     private final PromptOrchestrator promptOrchestrator;
 
     public ChatResponse chat(ChatRequest request) {
-        String userMessage = request.getMessage();
+        String userMessage = request.message();
 
         ChatPrompt chatPrompt = promptOrchestrator.build(userMessage);
 
-        String llmInput = chatPrompt.getGroundingRule()
+        String llmInput = chatPrompt.groundingRule()
                 + "\n\n"
-                + chatPrompt.getContext().getContextText()
+                + chatPrompt.context().contextText()
                 + "\n\nUser Question:\n"
                 + userMessage;
 
         String aiResponse = chatClient.prompt()
-                .system(chatPrompt.getSystemInstructions().getInstructions())
+                .system(chatPrompt.systemInstructions().instructions())
                 .user(llmInput)
                 .call().content();
 

@@ -29,7 +29,7 @@ public class WikiSemanticChunkerTest {
 
         // pick a wiki document
         IngestedDocument wikiDoc = documents.stream()
-                .filter(d -> d.getSource().contains("WIKI"))
+                .filter(d -> d.source().contains("WIKI"))
                 .findFirst()
                 .orElseThrow();
 
@@ -44,13 +44,13 @@ public class WikiSemanticChunkerTest {
 
 
     private static void printChunks(IngestedDocument document, List<Chunk> chunks) {
-        log.info("Source: {}", document.getSource());
-        log.info("Original length: {}", document.getContent().length());
+        log.info("Source: {}", document.source());
+        log.info("Original length: {}", document.content().length());
         log.info("Total chunks: {}", chunks.size());
 
         for (Chunk chunk : chunks) {
-            log.info("---- Chunk {} ----", chunk.getChunkIndex());
-            log.info(chunk.getContent());
+            log.info("---- Chunk {} ----", chunk.chunkIndex());
+            log.info(chunk.content());
         }
     }
 }

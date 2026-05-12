@@ -29,7 +29,7 @@ public class PdfPragmaticChunker {
     }
 
     private Chunk enrichPdfMetadata(Chunk chunk) {
-        Map<String, Object> enrichedMetadata = new HashMap<>(chunk.getMetadata());
+        Map<String, Object> enrichedMetadata = new HashMap<>(chunk.metadata());
 
         enrichedMetadata.put("sourceType", "PDF");
         enrichedMetadata.put("chunkStrategy", "PDF_PRAGMATIC_FIXED_SIZE");
@@ -38,10 +38,10 @@ public class PdfPragmaticChunker {
         enrichedMetadata.put("chunkOverlap", PDF_CHUNK_OVERLAP);
 
         return new Chunk(
-                chunk.getSource(),
-                chunk.getContent(),
+                chunk.source(),
+                chunk.content(),
                 enrichedMetadata,
-                chunk.getChunkIndex()
+                chunk.chunkIndex()
         );
     }
 }

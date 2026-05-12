@@ -18,8 +18,8 @@ public class IngestionOrchestratorTest {
         System.out.println("Total docs = " + docs.size());
 
         docs.forEach(doc -> {
-            System.out.println("SOURCE = " + doc.getSource());
-            System.out.println(doc.getContent());
+            System.out.println("SOURCE = " + doc.source());
+            System.out.println(doc.content());
             System.out.println("----");
         });
     }

@@ -26,18 +26,18 @@ public class PdfPragmaticChunkerTest {
         List<IngestedDocument> documents = ingestionOrchestrator.ingestAll();
 
         IngestedDocument pdfDoc = documents.stream()
-                .filter(d -> d.getSource().equals("PDF"))
+                .filter(d -> d.source().equals("PDF"))
                 .findFirst()
                 .orElseThrow();
 
         List<Chunk> chunks = pdfChunker.chunk(pdfDoc);
-        log.info("PDF Source: {}", pdfDoc.getSource());
+        log.info("PDF Source: {}", pdfDoc.source());
         log.info("Total chunks: {}", chunks.size());
 
         for (Chunk chunk : chunks) {
-            log.info("---- Chunk {} ----", chunk.getChunkIndex());
-            log.info("Metadata: {}", chunk.getMetadata());
-            log.info(chunk.getContent());
+            log.info("---- Chunk {} ----", chunk.chunkIndex());
+            log.info("Metadata: {}", chunk.metadata());
+            log.info(chunk.content());
         }
     }
 }

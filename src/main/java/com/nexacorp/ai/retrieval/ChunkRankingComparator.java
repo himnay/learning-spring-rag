@@ -38,7 +38,7 @@ public class ChunkRankingComparator implements Comparator<Chunk>  {
     }
 
     private LocalDate extractRelevantDate(Chunk chunk) {
-        Map<String, Object> metadata = chunk.getMetadata();
+        Map<String, Object> metadata = chunk.metadata();
         if (!"DB".equals(metadata.get("source"))) {
             return null;
         }
@@ -57,7 +57,7 @@ public class ChunkRankingComparator implements Comparator<Chunk>  {
     }
 
     private int tablePriority(Chunk chunk) {
-        String table = chunk.getMetadata().get("table").toString();
+        String table = chunk.metadata().get("table").toString();
 
         return switch (table) {
             case "release_notes" -> 1;
@@ -68,11 +68,11 @@ public class ChunkRankingComparator implements Comparator<Chunk>  {
     }
 
     private boolean isDbChunk(Chunk chunk) {
-        return "DB".equals(chunk.getMetadata().get("source"));
+        return "DB".equals(chunk.metadata().get("source"));
     }
 
     private int sourcePriority(Chunk chunk) {
-        String source = chunk.getMetadata().get("source").toString();
+        String source = chunk.metadata().get("source").toString();
 
         return switch (source) {
             case "PDF" -> 1;

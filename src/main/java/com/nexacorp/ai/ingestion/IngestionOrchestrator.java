@@ -22,15 +22,15 @@ public class IngestionOrchestrator {
     private final DatabaseIngestionService   databaseIngestionService;
 
     public List<IngestedDocument> ingest(KnowledgeRequest request) throws Exception{
-        SourceType source = request.getSourceType();
+        SourceType source = request.sourceType();
         if (source.equals(SourceType.PDF)) {
-            return pdfIngestionService.ingest(request.getName());
+            return pdfIngestionService.ingest(request.name());
         }
         if (source.equals(SourceType.WIKI)) {
-            return wikiIngestionService.ingest(request.getName());
+            return wikiIngestionService.ingest(request.name());
         }
         if (source.equals(SourceType.DATABASE)) {
-            return databaseIngestionService.ingest(request.getName());
+            return databaseIngestionService.ingest(request.name());
         }
         return Collections.emptyList();
     }

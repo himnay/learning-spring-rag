@@ -19,10 +19,10 @@ public class RetrievalServiceTest {
     void retrieve_test() {
         RetrievalResult result = retrievalService.retrieve("What is the work from home policy");
 
-        log.info("Retrieval result - chunks found: {}" , result.getChunks().size());
-        for(Chunk chunk : result.getChunks()) {
-            log.info("Metadata    : {}", chunk.getMetadata());
-            log.info("Content     : {}", chunk.getContent());
+        log.info("Retrieval result - chunks found: {}" , result.chunks().size());
+        for(Chunk chunk : result.chunks()) {
+            log.info("Metadata    : {}", chunk.metadata());
+            log.info("Content     : {}", chunk.content());
         }
 
     }

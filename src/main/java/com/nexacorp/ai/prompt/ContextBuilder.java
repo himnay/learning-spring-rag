@@ -12,10 +12,10 @@ public class ContextBuilder {
         StringBuilder sb = new StringBuilder();
 
         int index = 1;
-        for (Chunk chunk : retrievalResult.getChunks()) {
+        for (Chunk chunk : retrievalResult.chunks()) {
             sb.append("Context ").append(index++).append(":\n");
             appendCitation(sb, chunk);
-            sb.append(chunk.getContent());
+            sb.append(chunk.content());
             sb.append("\n\n");
         }
 
@@ -26,7 +26,7 @@ public class ContextBuilder {
         // [PDF:HR_Leave_policy.pdf]
         // [DB:faqs#5]
 
-        Map<String, Object> metadata = chunk.getMetadata();
+        Map<String, Object> metadata = chunk.metadata();
         String source = metadata.get("source").toString();
 
         switch(source) {

@@ -13,7 +13,7 @@ public class ChunkEmbeddingService {
     private final EmbeddingModel embeddingModel;
 
     public EmbeddedChunk embed(Chunk chunk) {
-        float[] vector = embeddingModel.embed(chunk.getContent());
+        float[] vector = embeddingModel.embed(chunk.content());
         return new EmbeddedChunk(chunk, vector);
     }
 

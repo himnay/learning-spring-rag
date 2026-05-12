@@ -28,13 +28,13 @@ public class ChunkingOrchestratorTest {
             List<Chunk> chunks = chunkingOrchestrator.chunk(document);
 
             log.info("====================================");
-            log.info("SOURCE : {}", document.getSource());
+            log.info("SOURCE : {}", document.source());
             log.info("CHUNKS : {}", chunks.size());
 
             for (Chunk chunk : chunks) {
-                log.info("Chunk index : {}", chunk.getChunkIndex());
-                log.info("Metadata    : {}", chunk.getMetadata());
-                log.info("Content     : {}", chunk.getContent());
+                log.info("Chunk index : {}", chunk.chunkIndex());
+                log.info("Metadata    : {}", chunk.metadata());
+                log.info("Content     : {}", chunk.content());
             }
         }
     }

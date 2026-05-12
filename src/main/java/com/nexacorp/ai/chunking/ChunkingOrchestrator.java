@@ -16,7 +16,7 @@ public class ChunkingOrchestrator {
     private final DatabaseChunker databaseChunker;
 
     public List<Chunk> chunk(IngestedDocument document) throws Exception {
-        return switch (document.getSource()) {
+        return switch (document.source()) {
             case "WIKI" ->
                     wikiSemanticChunker.chunk(document);
 
@@ -27,7 +27,7 @@ public class ChunkingOrchestrator {
                     databaseChunker.chunk(document);
 
             default ->
-                    throw new IllegalArgumentException("Unsupported source type: " + document.getSource());
+                    throw new IllegalArgumentException("Unsupported source type: " + document.source());
         };
 
     }

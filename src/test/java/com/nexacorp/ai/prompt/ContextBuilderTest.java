@@ -23,6 +23,6 @@ public class ContextBuilderTest {
         PromptContext promptContext = new ContextBuilder().build(result);
 
         log.info("=== Loaded Context ===");
-        log.info("\n{}", promptContext.getContextText());
+        log.info("\n{}", promptContext.contextText());
     }
 }

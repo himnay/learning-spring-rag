@@ -16,6 +16,6 @@ public class SystemPromptLoaderTest {
         SystemInstructions instructions = new SystemPromptLoader().load();
 
         log.info("=== Loaded System Prompt ===");
-        log.info("\n{}", instructions.getInstructions());
+        log.info("\n{}", instructions.instructions());
     }
 }
