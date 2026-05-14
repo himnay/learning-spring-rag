@@ -24,11 +24,11 @@ public class ChunkingOrchestratorTest {
     @Test
     void testAllChunks() throws Exception {
         List<IngestedDocument> documents = ingestionOrchestrator.ingestAll();
-        for (IngestedDocument document : documents) {
-            List<Chunk> chunks = chunkingOrchestrator.chunk(document);
+        for (IngestedDocument ingestedDocument : documents) {
+            List<Chunk> chunks = chunkingOrchestrator.chunk(ingestedDocument);
 
             log.info("====================================");
-            log.info("SOURCE : {}", document.source());
+            log.info("SOURCE : {}", ingestedDocument.source());
             log.info("CHUNKS : {}", chunks.size());
 
             for (Chunk chunk : chunks) {

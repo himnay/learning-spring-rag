@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class WikiIngestionServiceTest {
 
     @Autowired
-    WikiIngestionService wikiIngestionService;
+    private WikiIngestionService wikiIngestionService;
 
     @Test
     void ingestWikiFiles_forLearning() throws Exception {

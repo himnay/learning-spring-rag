@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class PdfIngestionServiceTest {
     @Autowired
-    PdfIngestionService pdfIngestionService;
+    private PdfIngestionService pdfIngestionService;
 
     @Test
     void ingestPdfs_forLearning() throws Exception {

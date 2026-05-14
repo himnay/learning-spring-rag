@@ -30,8 +30,8 @@ public class DatabaseChunkerTest {
                 .filter(doc -> "DB".equals(doc.source()))
                 .toList();
 
-        for (IngestedDocument dbDoc : dbDocuments) {
-            List<Chunk> chunks = databaseChunker.chunk(dbDoc);
+        for (IngestedDocument ingestedDocument : dbDocuments) {
+            List<Chunk> chunks = databaseChunker.chunk(ingestedDocument);
             Chunk chunk = chunks.get(0);
 
             log.info("==== DB CHUNK ====");

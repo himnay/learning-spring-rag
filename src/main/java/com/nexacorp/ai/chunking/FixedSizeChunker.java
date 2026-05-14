@@ -9,6 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A simple chunker that splits the document into fixed-size chunks.
+ * It also supports an optional overlap between chunks.
+ */
 @Service
 public class FixedSizeChunker {
 
@@ -43,7 +47,6 @@ public class FixedSizeChunker {
                 start = end;
             }
         }
-
         return chunks;
     }
 

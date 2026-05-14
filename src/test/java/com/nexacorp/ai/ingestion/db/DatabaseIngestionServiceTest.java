@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class DatabaseIngestionServiceTest {
     @Autowired
-    DatabaseIngestionService databaseIngestionService;
+    private DatabaseIngestionService databaseIngestionService;
 
     @Test
     public void testDatabaseIngestionService() {

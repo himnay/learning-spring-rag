@@ -2,6 +2,7 @@ package com.nexacorp.ai.ingestion.db;
 
 import com.nexacorp.ai.ingestion.model.IngestedDocument;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,11 +13,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class DatabaseIngestionService {
 
-    private static final Logger log = LoggerFactory.getLogger(DatabaseIngestionService.class);
     private final JdbcTemplate jdbcTemplate;
 
     public List<IngestedDocument> ingest(String tableName) {

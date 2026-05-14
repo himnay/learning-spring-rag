@@ -16,7 +16,7 @@ import java.util.Map;
 @Service
 public class WikiIngestionService {
     private static final Logger log = LoggerFactory.getLogger(WikiIngestionService.class);
-    private static final String WIKI_DIRECTORY = "data/wiki";
+    private static final String WIKI_DIRECTORY = "/Users/himansu/Downloads/learning-spring-rag/src/main/resources/data/wiki/";
 
     public List<IngestedDocument> ingest(String fileName) throws IOException {
         File pdfFile = new File(WIKI_DIRECTORY + "/" + fileName);
@@ -33,9 +33,15 @@ public class WikiIngestionService {
         return docs;
     }
 
+    /**
+     * Extract the text from the markdown file
+     * @param file
+     * @return
+     * @throws IOException
+     */
     private IngestedDocument ingestSingleFile(File file) throws IOException {
         String content = Files.readString(file.toPath());
-
+        log.info(content);
         return new IngestedDocument(
                 "WIKI",
                 content,

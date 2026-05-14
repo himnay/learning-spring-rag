@@ -7,8 +7,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootTest
 public class DatabaseConnectivityTest {
+
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     @Test
     void testDatabaseConnectivity() {

@@ -14,9 +14,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+/**
+ * Setup the OPENAI_API_KEY=<<key>> environment variable before running this test.
+ */
 @SpringBootTest
 public class EmbeddingInspectionTest {
-    private static final Logger log = LoggerFactory.getLogger(ChunkingOrchestratorTest.class);
+    private static final Logger log = LoggerFactory.getLogger(EmbeddingInspectionTest.class);
 
     @Autowired
     private IngestionOrchestrator ingestionOrchestrator;

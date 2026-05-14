@@ -9,8 +9,9 @@ import java.util.List;
 
 @SpringBootTest
 public class IngestionOrchestratorTest {
+    
     @Autowired
-    IngestionOrchestrator ingestionOrchestrator;
+    private IngestionOrchestrator ingestionOrchestrator;
 
     @Test
     void ingestAll() throws Exception{
