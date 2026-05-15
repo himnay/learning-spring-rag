@@ -17,8 +17,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Service
 @Slf4j
+@Service
 public class RetrievalService {
 
     private final VectorStore vectorStore;
