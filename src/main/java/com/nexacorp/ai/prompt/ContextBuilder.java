@@ -22,16 +22,17 @@ public class ContextBuilder {
         return new PromptContext(sb.toString().trim());
     }
 
+    /**
+     * Build citation in the format [PDF:HR_Leave_policy.pdf] or [WIKI:Company_Policies] or [DB:faqs#5]
+     * @param sb
+     * @param chunk
+     */
     private void appendCitation(StringBuilder sb, Chunk chunk) {
-        // [PDF:HR_Leave_policy.pdf]
-        // [DB:faqs#5]
-
         Map<String, Object> metadata = chunk.metadata();
         String source = metadata.get("source").toString();
 
         switch(source) {
-            case "PDF":
-            case "WIKI":
+            case "PDF", "WIKI" :
                 sb.append("[")
                         .append(source)
                         .append(": ").append(metadata.get("fileName"))
@@ -44,6 +45,5 @@ public class ContextBuilder {
                         .append("]\n");
                 break;
         }
-
     }
 }

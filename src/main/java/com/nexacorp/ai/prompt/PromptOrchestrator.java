@@ -8,6 +8,9 @@ import com.nexacorp.ai.retrieval.model.RetrievalResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * Orchestration layer used to build different prompts for different use cases. For example, we can have a PromptOrchestrator for chat, another for summarization, etc. This class is responsible for coordinating the retrieval of relevant information, building the prompt context, and applying grounding policies to ensure the generated prompt is effective for the intended use case.
+ */
 @Service
 @RequiredArgsConstructor
 public class PromptOrchestrator {
